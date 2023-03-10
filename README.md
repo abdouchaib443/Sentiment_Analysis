@@ -16,7 +16,7 @@ Finally, the code creates a shiny app that allows users to select two columns fr
 
 Overall, this R code provides a comprehensive analysis of the consumer complaints data, including text analysis and interactive data exploration.
 
-# here are some charts from the Rscript and the ShinyApp:
+# here are some charts from the Rscript:
 
 <img width="545" alt="Screenshot 2023-03-09 at 10 10 49 PM" src="https://user-images.githubusercontent.com/59566162/224225397-6e67251a-dbe4-40a6-8aa9-b98490d9ed17.png">
 
@@ -30,6 +30,9 @@ Overall, this R code provides a comprehensive analysis of the consumer complaint
 
 <img width="545" alt="Screenshot 2023-03-09 at 9 44 59 PM" src="https://user-images.githubusercontent.com/59566162/224225449-6269d83c-34f9-4da9-96e1-1a58d43ee0b2.png">
 
-<img width="545" alt="Screenshot 2023-03-09 at 9 44 59 PM" src="https://user-images.githubusercontent.com/59566162/224225475-8334569b-702a-4324-93fb-620a5da9fb97.png">
+# Here is the the ShinyApp :
+
+<img width="911" alt="Screenshot 2023-03-09 at 9 39 15 PM" src="https://user-images.githubusercontent.com/59566162/224225601-c4086a52-330a-4111-9e50-854369eb423b.png">
+
 
 
