@@ -18,7 +18,18 @@ Overall, this R code provides a comprehensive analysis of the consumer complaint
 
 # here are some charts from the Rscript:
 
+This is the R code that gave this chart :
+
+df_3%>%
+  ggplot(aes(x=n, y=sentiment)) +
+  geom_bar(stat="identity", fill="purple")+
+  labs(x = "word count", y = "Sentiment")
+geom_text(aes(label=NA), vjust=-0.3, size=3.5)+
+  theme_minimal()
+
 <img width="545" alt="Screenshot 2023-03-09 at 10 10 49 PM" src="https://user-images.githubusercontent.com/59566162/224225397-6e67251a-dbe4-40a6-8aa9-b98490d9ed17.png">
+
+
 
 <img width="545" alt="Screenshot 2023-03-09 at 9 44 50 PM" src="https://user-images.githubusercontent.com/59566162/224225405-60b57ff7-7ccd-49f5-a130-e95ea8e78250.png">
 
