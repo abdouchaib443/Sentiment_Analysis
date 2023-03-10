@@ -18,6 +18,34 @@ The code also creates a comparison cloud of the most frequent words and their se
 
 <img width="545" alt="Screenshot 2023-03-09 at 9 44 50 PM" src="https://user-images.githubusercontent.com/59566162/224225405-60b57ff7-7ccd-49f5-a130-e95ea8e78250.png">
 
+# Data Cleaning 🧹 :
+
+<img width="524" alt="Screenshot 2023-03-09 at 10 58 52 PM" src="https://user-images.githubusercontent.com/59566162/224227498-807576cb-4cfd-4d28-9bb0-51e0a550611b.png">
+
+This R code is used for text preprocessing and creating a term-document matrix (TDM).
+
+The code uses the tm package which is commonly used for text mining in R.
+
+Here is what each line does:
+
+corpus <- tm_map(corpus, tolower): Convert all text to lowercase.
+inspect(corpus[1:5]): Inspect the first five documents in the corpus.
+corpus <- tm_map(corpus, removePunctuation): Remove all punctuation marks from the text.
+inspect(corpus[1:5]): Inspect the first five documents again to see the result of the previous transformation.
+corpus <- tm_map(corpus, removeNumbers): Remove all numeric characters from the text.
+inspect(corpus[1:5]): Inspect the first five documents again to see the result of the previous transformation.
+cleanset <- tm_map(corpus, removeWords, stopwords('english')): Remove all stop words from the text using the built-in stop word list for English language.
+inspect(cleanset[1:5]): Inspect the first five documents again to see the result of the previous transformation.
+removeURL <- function(x) gsub('http[[:alnum:]]*', '', x): Define a function to remove URLs from the text.
+cleanset <- tm_map(cleanset, content_transformer(removeURL)): Remove all URLs from the text using the previously defined function.
+inspect(cleanset[1:5]): Inspect the first five documents again to see the result of the previous transformation.
+tdm <- TermDocumentMatrix(cleanset): Create a term-document matrix from the cleaned text data.
+tdm <- as.matrix(tdm): Convert the TDM to a matrix.
+tdm[1:10, 1:20]: Inspect the first 10 terms and 20 documents of the TDM matrix.
+
+
+
+
 # Sentimental analysis Code explanation :
 
   <img width="524" alt="Screenshot 2023-03-09 at 10 57 03 PM" src="https://user-images.githubusercontent.com/59566162/224227233-8aaf9314-ef50-418f-95d2-3096350b4577.png">
