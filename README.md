@@ -6,32 +6,22 @@ his R code performs several data analysis and visualization tasks on a dataset o
 
 The code starts by loading several libraries, including tidyverse, tidytext, dplyr, wordcloud, shiny, and DT. These libraries provide tools for data manipulation, text analysis, visualization, interactive data exploration, and data tables.
 
+<img width="545" alt="Screenshot 2023-03-09 at 10 10 49 PM" src="https://user-images.githubusercontent.com/59566162/224225397-6e67251a-dbe4-40a6-8aa9-b98490d9ed17.png">
+
 Then, the code sets the working directory and reads a CSV file of consumer complaints data into a dataframe named df_1. The code saves a serialized version of this dataframe as an RDS file and reads it back into a new dataframe named df. The code selects specific columns from df_1 and drops any rows with missing values to create a new dataframe named df_2.
 
 Next, the code uses tidytext to tokenize the Company.response.to.consumer column of df_2, removes stop words, and joins the resulting tokens with a sentiment lexicon to get a count of positive and negative words. The code then creates a bar plot of the top 10 words for each sentiment category using ggplot.
 
 The code also creates a comparison cloud of the most frequent words and their sentiment using the Bing sentiment lexicon.
 
-Finally, the code creates a shiny app that allows users to select two columns from df_2 and visualize them in a scatter plot, with an option to color-code the points by a third column. The app also includes a data table of the selected columns.
-
-Overall, this R code provides a comprehensive analysis of the consumer complaints data, including text analysis and interactive data exploration.
-
-# here are some charts from the Rscript:
-
-This is the R code that gave this chart :
-
-df_3%>%
-  ggplot(aes(x=n, y=sentiment)) +
-  geom_bar(stat="identity", fill="purple")+
-  labs(x = "word count", y = "Sentiment")
-geom_text(aes(label=NA), vjust=-0.3, size=3.5)+
-  theme_minimal()
-
-<img width="545" alt="Screenshot 2023-03-09 at 10 10 49 PM" src="https://user-images.githubusercontent.com/59566162/224225397-6e67251a-dbe4-40a6-8aa9-b98490d9ed17.png">
-
-
+# The Word-Cloud : 
 
 <img width="545" alt="Screenshot 2023-03-09 at 9 44 50 PM" src="https://user-images.githubusercontent.com/59566162/224225405-60b57ff7-7ccd-49f5-a130-e95ea8e78250.png">
+
+
+
+
+
 
 <img width="543" alt="Screenshot 2023-03-09 at 9 31 57 PM" src="https://user-images.githubusercontent.com/59566162/224225425-691920c1-a93e-4097-96bf-783490108396.png">
 
@@ -43,13 +33,11 @@ geom_text(aes(label=NA), vjust=-0.3, size=3.5)+
 
 # Here is the the ShinyApp :
 
-The Shiny app UI creates a simple layout with a title panel, two select input boxes, a plot, and a table. The server function is defined to render the plot and table based on the user's inputs.
+Finally, the code creates a shiny app that allows users to select two columns from df_2 and visualize them in a scatter plot, with an option to color-code the points by a third column. The app also includes a data table of the selected columns.
 
 The first select input box allows the user to choose a variable to plot on the x-axis, while the second select input box allows the user to choose a variable to plot on the y-axis. The plot is then rendered using ggplot with the selected variables and an additional input, Splitby, which is not defined in the code.
-
-The table displays the filtered and cleaned dataset using DT::dataTableOutput. Overall, the Shiny app allows users to explore the consumer complaints dataset and visualize the relationships between variables of interest.
 
 <img width="911" alt="Screenshot 2023-03-09 at 9 39 15 PM" src="https://user-images.githubusercontent.com/59566162/224225601-c4086a52-330a-4111-9e50-854369eb423b.png">
 
 
-
+Overall, this R code provides a comprehensive analysis of the consumer complaints data, including text analysis and interactive data exploration.
