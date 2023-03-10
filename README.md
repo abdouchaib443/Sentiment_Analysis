@@ -20,12 +20,7 @@ The code also creates a comparison cloud of the most frequent words and their se
 
 # Sentimental analysis Code explanation :
 
-  cdata <- read.csv("Consumer_Complaints.csv", header = T)
-  tweets <- iconv(cdata$Product)
-  
-  s <- get_nrc_sentiment(tweets)
-  head(s)
-  get_nrc_sentiment(ugly)
+  <img width="524" alt="Screenshot 2023-03-09 at 10 57 03 PM" src="https://user-images.githubusercontent.com/59566162/224227233-8aaf9314-ef50-418f-95d2-3096350b4577.png">
   
  This R code performs sentimental analysis on a dataset of consumer complaints stored in a CSV file named "Consumer_Complaints.csv". The code first reads the CSV file using the read.csv function and stores it in a data frame named cdata. Then, it extracts the "Product" column from the data frame and stores it in a vector named tweets.
 Next, the get_nrc_sentiment function from the syuzhet package is used to perform the sentimental analysis on the tweets vector. The function returns a data frame that contains the count of various emotions (anger, anticipation, disgust, fear, joy, sadness, surprise, and trust) for each tweet in the tweets vector.
