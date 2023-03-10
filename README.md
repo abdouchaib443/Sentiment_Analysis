@@ -43,6 +43,12 @@ geom_text(aes(label=NA), vjust=-0.3, size=3.5)+
 
 # Here is the the ShinyApp :
 
+The Shiny app UI creates a simple layout with a title panel, two select input boxes, a plot, and a table. The server function is defined to render the plot and table based on the user's inputs.
+
+The first select input box allows the user to choose a variable to plot on the x-axis, while the second select input box allows the user to choose a variable to plot on the y-axis. The plot is then rendered using ggplot with the selected variables and an additional input, Splitby, which is not defined in the code.
+
+The table displays the filtered and cleaned dataset using DT::dataTableOutput. Overall, the Shiny app allows users to explore the consumer complaints dataset and visualize the relationships between variables of interest.
+
 <img width="911" alt="Screenshot 2023-03-09 at 9 39 15 PM" src="https://user-images.githubusercontent.com/59566162/224225601-c4086a52-330a-4111-9e50-854369eb423b.png">
 
 
